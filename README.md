@@ -23,8 +23,8 @@ For example, using Swin-L as a backbone, our method achieves 57.55 mIoU in segme
 
 
 Our DeGMix model consists of the deformable mixer encoder and task-aware gating transformer decoder.
-<img src="figures/overview_10.png" width="100%">
-**An overview of our model jointly handles multiple tasks with a unified encoder-decoder architecture**
+![An overview of our model jointly handles multiple tasks with a unified encoder-decoder architecture]<img src="figures/overview_10.png" width="100%">
+
 
 
 Our DeGMix model can outperform existing MTL methods by a large margin while maintaining an optimal balance between accuracy and model parameters.
