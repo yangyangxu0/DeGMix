@@ -29,9 +29,8 @@ Our DeGMix model consists of the deformable mixer encoder and task-aware gating 
 
 Our DeGMix model can outperform existing MTL methods by a large margin while maintaining an optimal balance between accuracy and model parameters.
 
-<img src="figures/Params-acc.png" width="60%">
+<div align=center><img src="figures/Params-acc.png" width="60%" alt="Accuracy-to-Parameter trade-off on NYUD-v2 dataset"></div>
 
-**Accuracy-to-Parameter trade-off on NYUD-v2 dataset**
 
 ## Main Results on ImageNet with Pretrained Models
 
