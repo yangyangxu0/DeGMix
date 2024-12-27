@@ -25,7 +25,7 @@ For example, using Swin-L as a backbone, our method achieves 57.55 mIoU in segme
 
 ![DeGMix](figures/overview_10.png)
 
-## Performance
+## Accuracy-to-Parameter trade-off on NYUD-v2 dataset.
 ![DeGMix](figures/Params-acc.png)
 
 ## Main Results on ImageNet with Pretrained Models
