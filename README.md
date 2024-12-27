@@ -65,7 +65,7 @@ Our DeGMix model can outperform existing MTL methods by a large margin while mai
 }
 
 @inproceedings{xyy2023DeGMix,
-  title={Deformable Mixer Transformer with Gating for Multi-Task Learning of Dense Prediction},
+  title={DeGMix: Efficient Multi-Task Dense Prediction with Deformable and Gating Mixer},
   author={Xu, Yangyang and Yang, Yibo and Ghanem, Bernard and Zhang, Lefei and Bo, Du and Tao, Dacheng},
   booktitle={arxiv},
   year={2023}
