@@ -23,7 +23,7 @@ For example, using Swin-L as a backbone, our method achieves 57.55 mIoU in segme
 
 
 ## An overview of our model jointly handles multiple tasks with a unified encoder-decoder architecture. Our DeGMix model consists of the deformable mixer encoder and task-aware gating transformer decoder.
-![DeGMix] <img src="figures/overview_10.png" width="100%">
+![DeGMix]<img src="figures/overview_10.png" width="100%">
 
 
 ## Accuracy-to-Parameter trade-off on NYUD-v2 dataset.
