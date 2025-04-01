@@ -64,7 +64,7 @@ if 'backbone' in key:
 **DeGMix on NYUD-v2 dataset**
 
 | model|backbone|#Trainable Params | SemSeg| Depth | model checkpopint | log |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |:---: |:---: |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |:---: |
 | DeGMix-Tuning | Swin-T |1.3M |44.90 |0.615| [Google Drive]((https://drive.google.com/file/d/1wSk22xImq5gYudJEN9Im-Xcg52vEgIZT/view?usp=drive_link)) | [log](https://drive.google.com/file/d/1-Xuq7rav5ol17piECyZBssXOKuBSduqX/view?usp=drive_link)  |
 
 
