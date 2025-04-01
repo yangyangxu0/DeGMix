@@ -47,7 +47,7 @@ Our DeGMix model can outperform existing MTL methods by a large margin while mai
 **DeGMix on PASCAL-Contex dataset**
 
 | model | backbone |  SemSeg | PartSeg | Sal | Normal| Boundary|model checkpopint | log |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |:---: | :---: |
+| :---: | :---:    | :---:   | :---:   | :---: | :---: | :---: |:---: | :---: |
 | DeGMix | Swin-T | 69.44	 |58.02	 |83.31	 |14.31  |71.2 | [Google Drive](https://drive.google.com/file/d/1Xk-5cmpQrikJyv-fVlfF2YT541rRjyOU/view?usp=drive_link) | [log](https://drive.google.com/file/d/1-SKKwdIV0yoFhxWrSQqFqwKlgywrVx6H/view?usp=drive_link)  |
 | DeGMix | Swin-S | 71.54  |61.49	 |83.70  |14.90  |72.2 | [Google Drive](https://drive.google.com/file/d/14k-mv6apb3iqjb9g6MeYh3a7SIUZWwg7/view?usp=drive_link) | [log](https://drive.google.com/file/d/1O1Dr9_mQYxrsswiHLGzJdj6UP3nbdnm1/view?usp=drive_link)  |
 | DeGMix | Swin-B | 75.37  |64.82	 |83.75	 |14.22	 |73.0 | [Google Drive](https://drive.google.com/file/d/1pIs_uAig_eRqhBvjaDagfMBFB7OlSwzw/view?usp=drive_link) | [log](https://drive.google.com/file/d/1WV7VUg0JSTHJxXKJjfUM2QcfCCRWb8rS/view?usp=drive_link)  |
@@ -63,8 +63,8 @@ if 'backbone' in key:
 
 **DeGMix on NYUD-v2 dataset**
 
-| model|backbone|#Trainable Params | SemSeg| Depth | model checkpopint | log |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |:---: |
+| model|backbone|Trainable Params | SemSeg| Depth | model checkpopint | log |
+| :---: | :---: | :---: | :---: | :---: | :---: |:---: |
 | DeGMix-Tuning | Swin-T |1.3M |44.90 |0.615| [Google Drive]((https://drive.google.com/file/d/1wSk22xImq5gYudJEN9Im-Xcg52vEgIZT/view?usp=drive_link)) | [log](https://drive.google.com/file/d/1-Xuq7rav5ol17piECyZBssXOKuBSduqX/view?usp=drive_link)  |
 
 
