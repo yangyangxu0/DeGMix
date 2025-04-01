@@ -32,7 +32,7 @@ Our DeGMix model can outperform existing MTL methods by a large margin while mai
 .<div align=center><img src="figures/Params-acc.png" width="60%" alt="Accuracy-to-Parameter trade-off on NYUD-v2 dataset" /></div>
 
 
-## Main Results on ImageNet with Pretrained Models
+## Main Results on Dense Prediction Datesets
 
 **DeGMix on NYUD-v2 dataset**
 
@@ -52,6 +52,20 @@ Our DeGMix model can outperform existing MTL methods by a large margin while mai
 | DeGMix | Swin-S | 71.54  |61.49	 |83.70  |14.90  |72.2 | [Google Drive](https://drive.google.com/file/d/14k-mv6apb3iqjb9g6MeYh3a7SIUZWwg7/view?usp=drive_link) | [log](https://drive.google.com/file/d/1O1Dr9_mQYxrsswiHLGzJdj6UP3nbdnm1/view?usp=drive_link)  |
 | DeGMix | Swin-B | 75.37  |64.82	 |83.75	 |14.22	 |73.0 | [Google Drive](https://drive.google.com/file/d/1pIs_uAig_eRqhBvjaDagfMBFB7OlSwzw/view?usp=drive_link) | [log](https://drive.google.com/file/d/1WV7VUg0JSTHJxXKJjfUM2QcfCCRWb8rS/view?usp=drive_link)  |
 | DeGMix | Swin-L | 78.54	 |67.42	 |83.74	 |14.17	 |74.9 | [Google Drive](https://drive.google.com/file/d/11N8WCL6-nbaE2PRc2EaTDw0oo8a6A6xE/view?usp=drive_link) | [log](https://drive.google.com/file/d/1z9LdP__QLKcEQjg7JIZ0dswWoY0lnG0U/view?usp=drive_link)  |
+
+
+## Fine-tuning DeGMix
+```
+if 'backbone' in key:
+    value.requires_grad = False
+    backbone_params.append(value)
+```
+
+**DeGMix on NYUD-v2 dataset**
+
+| model|backbone|#Trainable Params | SemSeg| Depth | model checkpopint | log |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |:---: |:---: |
+| DeGMix-Tuning | Swin-T |1.3M |44.90 |0.615| [Google Drive]([innovations. ](https://drive.google.com/file/d/1wSk22xImq5gYudJEN9Im-Xcg52vEgIZT/view?usp=drive_link)) | [log](https://drive.google.com/file/d/1-Xuq7rav5ol17piECyZBssXOKuBSduqX/view?usp=drive_link)  |
 
 
 ## Citation
