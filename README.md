@@ -65,7 +65,9 @@ if 'backbone' in key:
 
 | model|         backbone|Trainable Params | SemSeg| Depth | model checkpoint | log |
 | :---: |          :---: | :---:           | :---: | :---: | :---: |:---: |
+| DITASK        | Swin-T |1.61M             |43.85  |0.606| [Google Drive]() | [log]()  |
 | DeGMix-Tuning | Swin-T |1.3M              |44.90 |0.615| [Google Drive](https://drive.google.com/file/d/1wSk22xImq5gYudJEN9Im-Xcg52vEgIZT/view?usp=drive_link) | [log](https://drive.google.com/file/d/1-Xuq7rav5ol17piECyZBssXOKuBSduqX/view?usp=drive_link)  |
+
 
 
 **DeGMix on PASCAL-Contex dataset**
