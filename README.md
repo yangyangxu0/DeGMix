@@ -61,7 +61,7 @@ if 'backbone' in key:
     backbone_params.append(value)
 ```
 
-**DeGMix on NYUD-v2 dataset**
+**DeGMix-tuning on NYUD-v2 dataset**
 
 | model|         backbone|Trainable Params | SemSeg| Depth | model checkpoint | log |
 | :---: |          :---: | :---:           | :---: | :---: | :---: |:---: |
@@ -70,7 +70,7 @@ if 'backbone' in key:
 
 
 
-**DeGMix on PASCAL-Contex dataset**
+**DeGMix-tuning on PASCAL-Contex dataset**
 
 | model | backbone | Trainable Params | SemSeg | PartSeg | Sal | Normal|model checkpoint | log |
 | :---: | :---:    | :---:   | :---:  | :---:  | :---:   | :---: |:---: | :---: |
