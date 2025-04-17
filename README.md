@@ -82,11 +82,11 @@ if 'backbone' in key:
 ## Citation
 
 ```
-@inproceedings{xyy2023DeGMix,
+@inproceedings{xyy2025DeGMix,
   title={DeGMix: Efficient Multi-Task Dense Prediction with Deformable and Gating Mixer},
   author={Xu, Yangyang and Yang, Yibo and Ghanem, Bernard and Zhang, Lefei and Bo, Du and Tao, Dacheng},
   booktitle={arxiv},
-  year={2023}
+  year={2025}
 }
 ```
 
