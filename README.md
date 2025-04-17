@@ -84,7 +84,7 @@ if 'backbone' in key:
 ```
 @inproceedings{xyy2025DeGMix,
   title={DeGMix: Efficient Multi-Task Dense Prediction with Deformable and Gating Mixer},
-  author={Xu, Yangyang and Yang, Yibo and Ghanem, Bernard and Zhang, Lefei and Bo, Du and Tao, Dacheng},
+  author={Xu, Yangyang and Yang, Yibo and Ghanem, Bernard and Zhang, Lefei and Bo, Du and Tao, Dacheng and Zhu, Jun},
   booktitle={arxiv},
   year={2025}
 }
