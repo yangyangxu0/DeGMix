@@ -77,7 +77,7 @@ if 'backbone' in key:
 | DITASK  | Swin-L | 7.1M	          |76.23   |67.53	 |64.07 |16.9 | [Non] | [CVPR25] |
 | DeGMix-Tuning | Swin-L | 3.2M       |78.14   |64.44    |64.20 |16.3	 | [Google Drive](https://drive.google.com/file/d/1Lh8ovYOPchz0gJst7KBh_BjiSN1rqzIR/view?usp=drive_link) | [log](https://drive.google.com/file/d/1TCq5LUVzmEU_hhcA4PaFEyoAqatYWsHS/view?usp=drive_link)  |
 
-
+<!--
 ## Citation
 
 ```
@@ -88,7 +88,7 @@ if 'backbone' in key:
   year={2025}
 }
 ```
-
+-->
 
 ## Getting Started
 **Install and Data Prepare**
