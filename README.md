@@ -98,8 +98,11 @@ if 'backbone' in key:
 **Install with pip**
 
 pip install pytorch-lightning==1.1.8
+
 pip install torch==1.8.0
+
 pip install scikit-learn==1.3.2
+
 pip install scipy==1.10.1
 
 **Datasets**
