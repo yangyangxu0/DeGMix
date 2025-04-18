@@ -103,9 +103,11 @@ pip install scikit-learn==1.3.2
 pip install scipy==1.10.1
 
 **Datasets**
+
 Dataset: PASCAL-Context and NYUD-v2. You can download the data from: [PASCALContext.tar.gz](https://hkustconnect-my.sharepoint.com/:u:/g/personal/hyeae_connect_ust_hk/ER57KyZdEdxPtgMCai7ioV0BXCmAhYzwFftCwkTiMmuM7w?e=2Ex4ab), [NYUDv2.tar.gz](https://hkustconnect-my.sharepoint.com/:u:/g/personal/hyeae_connect_ust_hk/EZ-2tWIDYSFKk7SCcHRimskBhgecungms4WFa_L-255GrQ?e=6jAt4c)
 
 **Train**
+
 To train DeGMix model:
 ```
 python ./src/main.py --cfg ./config/t-nyud/swin/siwn_t_DeGMix.yaml --datamodule.data_dir $DATA_DIR --trainer.gpus 0,1,2,3,4,5,6,7
