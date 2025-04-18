@@ -1,7 +1,6 @@
 # DeGMix: Efficient Multi-Task Dense Prediction with Deformable and Gating Mixer
 
-This repo is the official implementation of ["DeGMix"](https://doi.org/10.48550/arXiv.2308.05721) as well as the follow-ups. It currently includes code and models for the following tasks:
-
+This repo is the official implementation of "DeGMix" as well as the follow-ups. It currently includes code and models for the following tasks:
 
 
 ## Updates
