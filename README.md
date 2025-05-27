@@ -73,7 +73,7 @@ if 'backbone' in key:
 
 | model | backbone | Trainable Params | SemSeg | PartSeg | Sal | Normal|model checkpoint | log |
 | :---: | :---:    | :---:   | :---:  | :---:  | :---:   | :---: |:---: | :---: |
-| DeGMix-Tuning | Swin-T | 2.2M	      |58.02   |83.31	 |14.31  |71.2 | [Google Drive](https://drive.google.com/file/d/15VCYRw63ZeZsz6zQr1UlbtuDettZNmkv/view?usp=drive_link) | [log](https://drive.google.com/file/d/1clvXWVJcquD_iz4kJLM2FPPZsbfU0IEa/view?usp=drive_link)  |
+| DeGMix-Tuning | Swin-T | 2.2M	      |67.37   |56.87	 |64.12  |15.67 | [Google Drive](https://drive.google.com/file/d/15VCYRw63ZeZsz6zQr1UlbtuDettZNmkv/view?usp=drive_link) | [log](https://drive.google.com/file/d/1clvXWVJcquD_iz4kJLM2FPPZsbfU0IEa/view?usp=drive_link)  |
 | DITASK  | Swin-L | 7.1M	          |76.23   |67.53	 |64.07 |16.9 | [Non] | [CVPR25] |
 | DeGMix-Tuning | Swin-L | 3.2M       |78.14   |64.44    |64.20 |16.3	 | [Google Drive](https://drive.google.com/file/d/1Lh8ovYOPchz0gJst7KBh_BjiSN1rqzIR/view?usp=drive_link) | [log](https://drive.google.com/file/d/1TCq5LUVzmEU_hhcA4PaFEyoAqatYWsHS/view?usp=drive_link)  |
 
