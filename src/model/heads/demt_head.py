@@ -46,24 +46,16 @@ class DemtHead(BaseHead):
         self.task_fusion = nn.MultiheadAttention(embed_dim=dim_, num_heads=2, dropout=0.)
         self.smlp = nn.Sequential(nn.Linear(dim_, dim_), nn.LayerNorm(dim_))
         self.smlp2 = nn.ModuleList([nn.Sequential(nn.Linear(dim_, dim_), nn.LayerNorm(dim_))  for t in range (len(self.tasks))])
-       # self.attn1 = AnyAttention(dim, num_heads)
         self.patch_embed = PatchEmbed(in_channels=self.in_channels, embed_dims=dim_, conv_type='Conv2d', kernel_size=4, stride=4, pad_to_patch_size=True, norm_layer=Norm)
-        #self.task_querys = nn.ModuleList([nn.MultiheadAttention(embed_dim=dim_, num_heads=2, dropout=0.)  for t in range (len(self.tasks))])
+
         self.task_querys = nn.ModuleList([utils_heads.AnyAttention(dim=dim_, num_heads=2)  for t in range (len(self.tasks))])
         self.gmlps = sGATE(num_tokens=10000, len_sen=49, dim=dim_, d_ff=512, num_layers=1)
 
 
     def forward(self, inp, inp_shape, **kwargs):
-        #([1, 96, 107, 140]) ([1, 192, 54, 70]) ([1, 384, 27, 35]) ([1, 768, 14, 18]
-        # inp_shape [425, 560]
-        inp = self._transform_inputs(inp)   #bchw
-        ## torch.Size([1, 1440, 107, 140])
-
-       # b, c, h, w = inp.shape
-        # inp = self.linear1(inp.permute(0, 2, 3, 1)).permute(0, 3, 1, 2)
+        inp = self._transform_inputs(inp) 
         inp = self.patch_embed(inp)
         b, c, h, w = inp.shape
-       # print("2222222222222222222222222", inp.shape)  #e([8, 256, 27, 35])
 
         outs=[]
         for ind, defor_mixer in enumerate(self.defor_mixers):
@@ -102,7 +94,6 @@ class SGatingLayer(nn.Module):
 
     def forward(self, x):
         res, gate = torch.chunk(x, 2, -1)
-        ###Norm
         gate = self.ln(gate)
         gate_2 = gate.transpose(1, 2)
         gate = self.proj(gate_2).transpose(1, 2)
