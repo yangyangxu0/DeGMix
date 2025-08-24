@@ -23,7 +23,7 @@ class DemtViTHead(BaseHead):
         super().__init__(**kwargs)
         self.head_endpoints = ['final']
         out_channels = self.in_channels // 8
-        dim_ = 256 # 256
+        dim_ = 256
         self.bottleneck = nn.ModuleDict({t: utils_heads.ConvBNReLU(dim_,
                                                                    out_channels,
                                                                    kernel_size=3,
@@ -39,28 +39,18 @@ class DemtViTHead(BaseHead):
         self.featconv = FeatConv(mla_channels=768, featconv_channels=128, norm_cfg=dict(type='SyncBN', requires_grad=True))
 
         self.defor_mixers = nn.ModuleList([DefMixer(dim_in=dim_, dim=dim_, depth=2)  for t in range (len(self.tasks))])
-
         self.linear1 = nn.Sequential(nn.Linear(self.in_channels, dim_), nn.LayerNorm(dim_))
-
         self.task_fusion = nn.MultiheadAttention(embed_dim=dim_, num_heads=2, dropout=0.)
         self.smlp = nn.Sequential(nn.Linear(dim_, dim_), nn.LayerNorm(dim_))
         self.smlp2 = nn.ModuleList([nn.Sequential(nn.Linear(dim_, dim_), nn.LayerNorm(dim_))  for t in range (len(self.tasks))])
 
-        
-        #self.task_querys = nn.ModuleList([nn.MultiheadAttention(embed_dim=dim_, num_heads=2, dropout=0.)  for t in range (len(self.tasks))])
         self.task_querys = nn.ModuleList([utils_heads.AnyAttention(dim=dim_, num_heads=2)  for t in range (len(self.tasks))])
         self.gmlps = sGATE(num_tokens=10000, len_sen=49, dim=dim_, d_ff=512, num_layers=1)
 
 
     def forward(self, inp, inp_shape, **kwargs):
-        # inp = self._transform_inputs(inp)   #bchw   #[2, 768, 27, 35]; inp_shape:[425,560]
-        # b, c, h, w = inp.shape
-        # inp[0].shape, inp[1].shape,inp[2].shape,inp[3].shape) #([2, 768, 27, 35]) 
-        
         inp = self.featconv(inp)
-        b, c, h, w = inp.shape   #[2, 512, 108, 140]
-
-        #inp = self.linear1(x.permute(0, 2, 3, 1)).permute(0, 3, 1, 2)
+        b, c, h, w = inp.shape
 
         outs=[]
         for ind, defor_mixer in enumerate(self.defor_mixers):
@@ -99,7 +89,6 @@ class SGatingLayer(nn.Module):
 
     def forward(self, x):
         res, gate = torch.chunk(x, 2, -1)
-        ###Norm
         gate = self.ln(gate)
         gate_2 = gate.transpose(1, 2)
         gate = self.proj(gate_2).transpose(1, 2)
@@ -329,11 +318,7 @@ class FeatConv(nn.Module):
             nn.Conv2d(featconv_channels*2, featconv_channels*2, 3, padding=1, bias=False),
             build_norm_layer(norm_cfg, featconv_channels*2)[1], nn.ReLU())
 
-
-    #def forward(self, mla_p2, mla_p3, mla_p4, mla_p5):
     def forward(self, inp):
-        # head2 = self.head2(mla_p2)
-        # self.head2(inp[0]).shape 2,128,27,35
         head2 = F.interpolate(self.head2(
             inp[0]), [i*4 for i in inp[0].shape[2:]], mode='bilinear', align_corners=False)
         head3 = F.interpolate(self.head3(
@@ -343,7 +328,5 @@ class FeatConv(nn.Module):
         head5 = F.interpolate(self.head5(
             inp[3]), [i*4 for i in inp[3].shape[2:]], mode='bilinear', align_corners=False)
         outs = self.head6(torch.cat([head2, head3, head4, head5], dim=1))
-        #print("4444444444444444444444444444444", outs.shape)
         return outs
-       # return torch.cat([head2, head3, head4, head5], dim=1)
 
